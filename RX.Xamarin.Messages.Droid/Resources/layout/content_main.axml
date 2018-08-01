@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
-
     <TextView
+        android:text="MESSAGES"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textCurrentSpeedTitle"
+        android:textColor="@color/content_orange"
+        android:textSize="@dimen/h3_text_size"
         android:layout_centerInParent="true"
-        android:text="Hello World!" />
-
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/padding_container" />
 </RelativeLayout>

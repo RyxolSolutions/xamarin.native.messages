@@ -5,14 +5,17 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Content.PM;
 
 namespace RX.Xamarin.Messages.Droid
 {
-	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-	public class MainActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", ScreenOrientation = ScreenOrientation.SensorPortrait,
+    LaunchMode = LaunchMode.SingleInstance, ConfigurationChanges = (ConfigChanges.KeyboardHidden | ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.Locale))]
+    public class MainActivity : AppCompatActivity
 	{
+        FloatingActionButton fabInfo;
 
-		protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
 		{
 			base.OnCreate(savedInstanceState);
 
@@ -21,11 +24,22 @@ namespace RX.Xamarin.Messages.Droid
 			Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
-		}
+			fabInfo = FindViewById<FloatingActionButton>(Resource.Id.fab);
 
-		public override bool OnCreateOptionsMenu(IMenu menu)
+            InitControls();
+        }
+
+        protected void InitControls()
+        {
+            SetupGestures();
+        }
+
+        void SetupGestures()
+        {
+            fabInfo.Click += FabOnClick;
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
@@ -44,10 +58,10 @@ namespace RX.Xamarin.Messages.Droid
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
+            View view = (View)sender;
+            Snackbar.Make(view, "Contact us at dev@ryxol.com", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
-	}
+    }
 }
 

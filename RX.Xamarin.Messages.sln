@@ -12,6 +12,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		RX.Messages.Shared\RX.Messages.Shared.projitems*{101e3060-8799-4119-8a7a-4f86a01c0c84}*SharedItemsImports = 4
+		RX.Messages.Shared\RX.Messages.Shared.projitems*{3bc0ac7e-3b3b-4d3f-9cc0-b2bdecc460a6}*SharedItemsImports = 4
 		RX.Messages.Shared\RX.Messages.Shared.projitems*{643ac009-cff3-4164-bfe7-43c8b3d06345}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
