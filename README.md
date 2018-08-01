@@ -1,2 +1,2 @@
 # xamarin.native.messages
-Xamarin Native Android and iOS chat sample. 
+Xamarin Native chat sample for Android and iOS. 
